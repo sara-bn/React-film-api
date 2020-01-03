@@ -53,7 +53,7 @@ function SearchResult() {
         {movies.slice(0, 12).map(movie => (   
                     <div key={movie.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
                       <img className="poster " src={url + movie.poster_path} alt="o" />
-                      <h1>{movie.title}</h1>
+                      <h2>{movie.title}</h2>
                       <p>{movie.release_date}</p>
                       <p> {movie.vote_average}</p>
                       <p> {movie.overview.substring(0, 120) + "..."}</p>

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 function Nav(props) {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" >Movie DB</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container">
+              <a className="navbar-brand logo" >Movie DB</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+              </button>
 
-          <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+              <div className="collapse navbar-collapse menu" id="navbarNav">
                   {/* <Menu {...props}> */}
                   <ul className="navbar-nav">
                     

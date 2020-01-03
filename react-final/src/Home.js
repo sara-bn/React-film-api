@@ -37,7 +37,7 @@ function Home() {
               {items.slice(0, 12).map(item => (
                   <div key={item.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
                     <img className="poster " src={url + item.poster_path} alt="o" />
-                    <h1>{item.title}</h1>
+                    <h2>{item.title}</h2>
                     <p>{item.release_date}</p>
                     <p> {item.vote_average}</p>
                     <p> {item.overview.substring(0, 120) + "..."}</p>
