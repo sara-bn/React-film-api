@@ -9,6 +9,7 @@ import SearchResult from "./Search_result";
 import IndividualMovie from "./IndividualMovie";
 import MyFavorites from "./MyFavorites";
 import MyRated from "./MyRated";
+import Footer from "./Footer";
 
 function App(){
   return(
@@ -16,14 +17,15 @@ function App(){
         <div>
         <Nav />
         <Switch>
-//           <Route exact path="/" component={Home} />
-//           <Route path="/about" component={About} />
-//           <Route path="/discover" component={Discover} />
-//           <Route path="/Search_result" component={SearchResult} />
-//           <Route path="/movie/:id" component={IndividualMovie} />
-//           <Route path="/my_favorites" component={MyFavorites} />
-//           <Route path="/my_rated" component={MyRated} />
-//         </Switch>
+           <Route exact path="/" component={Home} />
+           <Route path="/about" component={About} />
+           <Route path="/discover" component={Discover} />
+           <Route path="/Search_result" component={SearchResult} />
+           <Route path="/movie/:id" component={IndividualMovie} />
+           <Route path="/my_favorites" component={MyFavorites} />
+           <Route path="/my_rated" component={MyRated} />
+         </Switch>
+         <Footer/>
         </div>
     </Router>
   );

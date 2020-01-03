@@ -38,7 +38,7 @@ function SearchResult() {
   const url = `https://image.tmdb.org/t/p/w500/`;
 
   return (
-   <div className="container">
+   <div className="search-container container">
       <input className="row"
       id = "myChoice"
       type="text"

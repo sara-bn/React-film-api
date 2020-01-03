@@ -39,7 +39,7 @@ function Nav(props) {
                   </ul>
           </div>
         </div>
-</nav>  );
+    </nav>);
              
 }
 
