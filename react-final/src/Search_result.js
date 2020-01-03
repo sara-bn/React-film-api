@@ -24,7 +24,7 @@ function SearchResult() {
           //const results contain all the movies that we are searching for
           const results = searchResults.results;
           setMovies(searchResults.results);
-         // console.log(movies[0]);
+          console.log(movies[0]);
 
         },
         error: (xhr, status, err) =>{
@@ -33,6 +33,9 @@ function SearchResult() {
 
     })
   }
+
+  const url = `https://image.tmdb.org/t/p/w500/`;
+  
   return (
    <div className="container">
       <input
@@ -47,12 +50,12 @@ function SearchResult() {
        <div className="row" >
         {movies.slice(0, 12).map(movie => (   
                     <div key={movie.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
-                      {/* <img className="poster " src={url + movie.poster_path} alt="o" /> */}
+                      <img className="poster " src={url + movie.poster_path} alt="o" />
                       <h1>{movie.title}</h1>
                       <p>{movie.release_date}</p>
                       <p> {movie.vote_average}</p>
                       <p> {movie.overview.substring(0, 120) + "..."}</p>
-                      {/* <a href={`/movie/${item.id}`}>More Info</a> */}
+                      <a href={`/movie/${movie.id}`}>More Info</a> 
                     </div>
           ))}
           </div>
