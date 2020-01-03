@@ -26,32 +26,23 @@ function Home() {
 
   return (
     <div className="home-result">
-      <select id="mySelect" onChange={handleChange}>
-        {/* name={name}  onChange={handleChange} */}
-        <option value="popular">Popular</option>
-        <option value="top_rated">Top Rated</option>
-        <option value="upcoming">Upcoming</option>
-        <option value="now_playing">Now Playing</option>
-      </select>
-      {items.slice(0, 12).map(item => (
-        <div
-          class="container"
-          key={item.id}
-          style={{
-            width: "18rem",
-            backgroundColor: "#379683",
-            marginBottom: "5px"
-          }}
-        >
-          <div class="row d-flex">
-            <div class="col-md ">
-              <img src={url + item.poster_path} alt="o" />
-              <h1>{item.title}</h1>
-              <p>{item.release_date}</p>
-              <p> {item.vote_average}</p>
-              <p> {item.overview.substring(0, 120) + "..."}</p>
-              <a href={`/movie/${item.id}`}>More Info</a>
-            </div>
+        <select id="mySelect" onChange={handleChange}>
+            <option value="popular">Popular</option>
+            <option value="top_rated">Top Rated</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="now_playing">Now Playing</option>
+        </select>
+        {items.slice(0, 12).map(item => (
+        <div className="container" key={item.id}>
+          <div className="d-flex flex-row row" >
+                <div className="item">
+                  <img className="poster " src={url + item.poster_path} alt="o" />
+                  <h1>{item.title}</h1>
+                  <p>{item.release_date}</p>
+                  <p> {item.vote_average}</p>
+                  <p> {item.overview.substring(0, 120) + "..."}</p>
+                  <a href={`/movie/${item.id}`}>More Info</a>
+                </div>
           </div>
         </div>
       ))}
