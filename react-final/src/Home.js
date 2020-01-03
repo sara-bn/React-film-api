@@ -32,41 +32,22 @@ function Home() {
             <option value="upcoming">Upcoming</option>
             <option value="now_playing">Now Playing</option>
         </select>
-        {items.slice(0, 12).map(item => (
-        <div className="container" key={item.id}>
-          <div className="d-flex flex-row row" >
-                <div className="item">
-                  <img className="poster " src={url + item.poster_path} alt="o" />
-                  <h1>{item.title}</h1>
-                  <p>{item.release_date}</p>
-                  <p> {item.vote_average}</p>
-                  <p> {item.overview.substring(0, 120) + "..."}</p>
-                  <a href={`/movie/${item.id}`}>More Info</a>
-                </div>
-          </div>
+        <div className="container" >
+          <div className="row" >
+              {items.slice(0, 12).map(item => (
+                  <div key={item.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
+                    <img className="poster " src={url + item.poster_path} alt="o" />
+                    <h1>{item.title}</h1>
+                    <p>{item.release_date}</p>
+                    <p> {item.vote_average}</p>
+                    <p> {item.overview.substring(0, 120) + "..."}</p>
+                    <a href={`/movie/${item.id}`}>More Info</a>
+                  </div>
+              ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }
 
 export default Home;
-
-// const fetchItems = async () => {
-//   const data = await fetch(
-//     `https://api.themoviedb.org/3/movie/popular?api_key=153693fafc14ce487b5a217264c74cb1&language=en-US&page=1`
-//   );
-//   const items = await data.json();
-//   console.log(items.results);
-//   setItems(items.results);
-// };
-
-// async function handleChange(selected) {
-//   const choice = document.getElementById("mySelect").value;
-//   const data = await fetch(
-//     `https://api.themoviedb.org/3/movie/${choice}?api_key=153693fafc14ce487b5a217264c74cb1&language=en-US&page=1`
-//   );
-//   const items = await data.json();
-//   console.log(choice);
-//   setItems(items.results);
-//

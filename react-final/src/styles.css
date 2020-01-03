@@ -12,34 +12,32 @@ body {
 li {
   padding: 10px;
 }
-/* #page-wrap {
-  text-align: center; */
-/* Prevent sidebar from showing a scrollbar on page */
-/* overflow: auto;
-} */
 
-.navbar{
+/* .navbar{
   background-color: rgba(46, 25, 25, 0.918);
   display: block;
   color: white;
   padding-left: 16px;
   display: flex;
-}
+} */
 
 .container{
   /* width: 100px; */
-  background-color: #379683;
-  margin-bottom: 5px
+  /* background-color: #379683; */
+  margin: 0px auto;
+  width: 100%;;
 }
 
 
-.item{
-  border: 5px solid black;
-  width: 340px;
+.one_movie{
+  /* border: 3px solid black; */
+  /* width: 30%; */
+  /* margin: 5px; */
+  margin-bottom: 20px;
 }
 
 .poster{
-  width: 300px;
+  width: 100%;
 }
 
 /* Individual item */
@@ -129,9 +127,7 @@ element.style {
   padding: 30px;
   position: relative;
 }
-/* img {
-  width: 300px;
-} */
+
 #mySelect {
   display: block;
   margin-left: auto;

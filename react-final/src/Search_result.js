@@ -43,20 +43,20 @@ function SearchResult() {
       name="search"
       onChange={SearchMovie}
     />
-     {movies.slice(0, 12).map(movie => (
-        <div className="container" key={movie.id}>
-          <div className="d-flex flex-row row" >
-                <div className="item">
-                  {/* <img className="poster " src={url + movie.poster_path} alt="o" /> */}
-                  <h1>{movie.title}</h1>
-                  <p>{movie.release_date}</p>
-                  <p> {movie.vote_average}</p>
-                  <p> {movie.overview.substring(0, 120) + "..."}</p>
-                  {/* <a href={`/movie/${item.id}`}>More Info</a> */}
-                </div>
+     <div className="container">
+       <div className="row" >
+        {movies.slice(0, 12).map(movie => (   
+                    <div key={movie.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
+                      {/* <img className="poster " src={url + movie.poster_path} alt="o" /> */}
+                      <h1>{movie.title}</h1>
+                      <p>{movie.release_date}</p>
+                      <p> {movie.vote_average}</p>
+                      <p> {movie.overview.substring(0, 120) + "..."}</p>
+                      {/* <a href={`/movie/${item.id}`}>More Info</a> */}
+                    </div>
+          ))}
           </div>
-        </div>
-      ))}
+      </div>
    </div>
   );
 }
