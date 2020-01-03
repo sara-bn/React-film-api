@@ -6,12 +6,12 @@ function Nav(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-              <a className="navbar-brand logo" >Movie DB</a>
+              <a className="navbar-brand" href="./" ><img className="logo" src="https://www.themoviedb.org/assets/2/v4/logos/312x276-primary-green-74212f6247252a023be0f02a5a45794925c3689117da9d20ffe47742a665c518.png"/></a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
               </button>
 
-              <div className="collapse navbar-collapse menu" id="navbarNav">
+              <div className=" menu collapse navbar-collapse " id="navbarNav">
                   {/* <Menu {...props}> */}
                   <ul className="navbar-nav">
                     
@@ -31,10 +31,10 @@ function Nav(props) {
                       <li className="nav-item nav-link">Individual Movie</li>
                     </Link>
                     <Link to="/my_favorites">
-                      <li className="nav-item nav-link">My Favorites</li>
+                      <li className="nav-item nav-link">Favorites</li>
                     </Link>
                     <Link to="/my_rated">
-                      <li className="nav-item nav-link">My Rated</li>
+                      <li className="nav-item nav-link">Rated</li>
                     </Link>
                   </ul>
           </div>

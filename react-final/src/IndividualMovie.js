@@ -20,9 +20,9 @@ function IndividualMovie(props) {
   const url = `https://image.tmdb.org/t/p/w500/`;
 
   return (
-    <div className="individual-result">
-      <div class="row d-flex">
-        <div class="col-md ">
+    <div className="container">
+      <div class="row">
+        <div class=" individual-movie col-12">
           <img src={url + item.poster_path} alt="o" />
           <h1>{item.title}</h1>
           <p>{item.release_date}</p>
