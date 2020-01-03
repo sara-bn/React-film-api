@@ -6,6 +6,7 @@ import Select from "react-select";
 import Axios from "axios";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Moment from "moment";
 
 function Home() {
   const [items, setItems] = useState([]);
@@ -26,47 +27,49 @@ function Home() {
 
   return (
     <div className="home-result">
-        <select id="mySelect" onChange={handleChange}>
-            <option value="popular">Popular</option>
-            <option value="top_rated">Top Rated</option>
-            <option value="upcoming">Upcoming</option>
-            <option value="now_playing">Now Playing</option>
-        </select>
-        {items.slice(0, 12).map(item => (
-        <div className="container" key={item.id}>
-          <div className="d-flex flex-row row" >
-                <div className="item">
-                  <img className="poster " src={url + item.poster_path} alt="o" />
-                  <h1>{item.title}</h1>
-                  <p>{item.release_date}</p>
-                  <p> {item.vote_average}</p>
-                  <p> {item.overview.substring(0, 120) + "..."}</p>
-                  <a href={`/movie/${item.id}`}>More Info</a>
+      <select id="mySelect" onChange={handleChange}>
+        <option value="popular">Popular</option>
+        <option value="top_rated">Top Rated</option>
+        <option value="upcoming">Upcoming</option>
+        <option value="now_playing">Now Playing</option>
+      </select>
+
+      <div className="main-container black">
+        <div className="container">
+          <div className="d-lg-flex flex-wrap justify-content-end">
+            {items.slice(0, 12).map(item => (
+              <div className="col ml-auto" key={item.id}>
+                <div className="card mb-4">
+                  <img
+                    className="poster "
+                    src={url + item.poster_path}
+                    alt="movie-poster"
+                  />
+                  <div className="card-body">
+                    <div className="date">
+                      <span>
+                        {Moment(item.release_date).format("MMM d YYYY")}
+                      </span>
+                    </div>
+                    <span>{item.vote_average}</span>
+                  </div>
+                  <div className="card-text">
+                    <div className="content">
+                      <p className="text">
+                        {item.overview != undefined &&
+                          item.overview.substring(0, 120) + "..."}
+                      </p>
+                      <a href={`/movie/${item.id}`}>More Info</a>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
 
 export default Home;
-
-// const fetchItems = async () => {
-//   const data = await fetch(
-//     `https://api.themoviedb.org/3/movie/popular?api_key=153693fafc14ce487b5a217264c74cb1&language=en-US&page=1`
-//   );
-//   const items = await data.json();
-//   console.log(items.results);
-//   setItems(items.results);
-// };
-
-// async function handleChange(selected) {
-//   const choice = document.getElementById("mySelect").value;
-//   const data = await fetch(
-//     `https://api.themoviedb.org/3/movie/${choice}?api_key=153693fafc14ce487b5a217264c74cb1&language=en-US&page=1`
-//   );
-//   const items = await data.json();
-//   console.log(choice);
-//   setItems(items.results);
-//
