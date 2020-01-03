@@ -8,9 +8,10 @@ import $ from "jquery";
 function SearchResult() {
   const [movies, setMovies] = useState([]);
 
-  async function SearchMovie(selected) {
+  async function SearchMovie() {
     const choice = document.getElementById("myChoice").value;
     // const url = `https://api.themoviedb.org/3/movie/${choice}?api_key=153693fafc14ce487b5a217264c74cb1&language=en-US`;
+    console.log(choice);
     performSearch(choice);
   }
 
@@ -35,10 +36,10 @@ function SearchResult() {
   }
 
   const url = `https://image.tmdb.org/t/p/w500/`;
-  
+
   return (
    <div className="container">
-      <input
+      <input className="row"
       id = "myChoice"
       type="text"
       placeholder="Search Movie by Title"
@@ -46,8 +47,9 @@ function SearchResult() {
       name="search"
       onChange={SearchMovie}
     />
-     <div className="container">
-       <div className="row" >
+ 
+    <div className="row" >
+        {/* <h2> Search result for ${document.getElementById("myChoice").value} </h2>  */}
         {movies.slice(0, 12).map(movie => (   
                     <div key={movie.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
                       <img className="poster " src={url + movie.poster_path} alt="o" />
@@ -59,8 +61,8 @@ function SearchResult() {
                     </div>
           ))}
           </div>
-      </div>
-   </div>
+    </div>
+ 
   );
 }
 

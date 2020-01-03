@@ -28,11 +28,11 @@ li {
   width: 100%;;
 }
 
+.myChoice{
+  margin-bottom: 20px;
+}
 
 .one_movie{
-  /* border: 3px solid black; */
-  /* width: 30%; */
-  /* margin: 5px; */
   margin-bottom: 20px;
 }
 
