@@ -33,7 +33,7 @@ function Home() {
             <option value="now_playing">Now Playing</option>
         </select>
         <div className="container" >
-          <div className="row" >
+          <div className="d-flex justify-content-center row " >
               {items.slice(0, 12).map(item => (
                   <div key={item.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
                     <img className="poster " src={url + item.poster_path} alt="o" />

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { slide as Menu } from "react-burger-menu";
+// import { slide as Menu } from "react-bur
 
 function Nav(props) {
   return (
@@ -37,6 +37,7 @@ function Nav(props) {
                       <li className="nav-item nav-link">Rated</li>
                     </Link>
                   </ul>
+
           </div>
         </div>
     </nav>);

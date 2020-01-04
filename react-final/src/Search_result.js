@@ -7,12 +7,16 @@ import $ from "jquery";
 
 function SearchResult() {
   const [movies, setMovies] = useState([]);
+  const [name, setName] = useState("");  
 
-  async function SearchMovie() {
+  async function SearchMovie(event) {
     const choice = document.getElementById("myChoice").value;
     // const url = `https://api.themoviedb.org/3/movie/${choice}?api_key=153693fafc14ce487b5a217264c74cb1&language=en-US`;
-    console.log(choice);
+    //console.log(choice);
+    const newName = event.target.value;
+    setName(newName);
     performSearch(choice);
+    return choice;
   }
 
   function performSearch(choice){
@@ -37,28 +41,32 @@ function SearchResult() {
 
   const url = `https://image.tmdb.org/t/p/w500/`;
 
+  // const c = `{SearchMovie()}`;
+
   return (
    <div className="search-container container">
+     
       <input className="row"
       id = "myChoice"
       type="text"
       placeholder="Search Movie by Title"
       aria-label="Search"
       name="search"
+      value={name}
       onChange={SearchMovie}
     />
- 
-    <div className="row" >
-        {/* <h2> Search result for ${document.getElementById("myChoice").value} </h2>  */}
+    <h2> Search result for {name} : </h2> 
+    <div className="d-flex justify-content-center row " >
+        
         {movies.slice(0, 12).map(movie => (   
-                    <div key={movie.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <img className="poster " src={url + movie.poster_path} alt="o" />
-                      <h2>{movie.title}</h2>
-                      <p>{movie.release_date}</p>
-                      <p> {movie.vote_average}</p>
-                      <p> {movie.overview.substring(0, 120) + "..."}</p>
-                      <a href={`/movie/${movie.id}`}>More Info</a> 
-                    </div>
+            <div key={movie.id} className="one_movie col-xl-3 col-lg-4 col-sm-6 col-12">
+              <img className="poster " src={url + movie.poster_path} alt="o" />
+              <h2>{movie.title}</h2>
+              <p>{movie.release_date}</p>
+              <p> {movie.vote_average}</p>
+              <p> {movie.overview.substring(0, 120) + "..."}</p>
+              <a href={`/movie/${movie.id}`}>More Info</a> 
+            </div>
           ))}
           </div>
     </div>
