@@ -17,6 +17,11 @@ function IndividualMovie(props) {
     const item = response.data;
     setItem(item);
   }
+
+  function LikeMovie(event){
+    event.target.className ="fas fa-heart fa-2x";
+
+  }
   const url = `https://image.tmdb.org/t/p/w500/`;
 
   return (
@@ -24,10 +29,15 @@ function IndividualMovie(props) {
       <div class="row">
         <div class=" individual-movie col-12">
           <img src={url + item.poster_path} alt="o" />
+          <div className="icon"> 
+             <i className="far fa-heart fa-2x" onClick={LikeMovie}></i>
+             <i className="fal fa-heart-broken"></i>
+          </div>
           <h1>{item.title}</h1>
           <p>{item.release_date}</p>
           <p> {item.vote_average}</p>
           <p> {item.overview}</p>
+          
         </div>
       </div>
     </div>

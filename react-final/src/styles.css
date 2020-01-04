@@ -44,17 +44,16 @@ li {
 .col-12{
   padding: 5px;
 }
-.col-xl-3{
+/* .col-xl-3{
   flex: 0 0 22%;
-}
+} */
 .poster{
   width: 100%;
+  margin-bottom: 10px;
 }
 
 #root {
   margin-top: 20px;
-  /* padding: 20px;
-  text-align: center; */
   margin: auto;
 }
 .root-item {
@@ -102,6 +101,10 @@ input{
 
 .copy{
   color:white;
+}
+
+.icon{
+  margin: 10px;
 }
 
 #footer{
