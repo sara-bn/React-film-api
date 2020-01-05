@@ -3,6 +3,7 @@
 import React from "react";
 import "./Navigation.css";
 import Selection from "./Selection";
+import Slider from './Slider';
 import Button from './Button'
 
 class Navigation extends React.Component {
@@ -23,7 +24,7 @@ class Navigation extends React.Component {
           onGenreChange={onGenreChange}
         />
 
-
+       <Slider data={year} onChange={onChange} />
         <Button onClick={onSearchButtonClick}>
           Search
         </Button>

@@ -5,12 +5,6 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import "./styles.css";
 
-
-
-// Main.js
-
-
-//import "./Main.css";
 import Navigation from "./Navigation";
 import Movies from "./Movies";
 
@@ -26,23 +20,9 @@ class Discover extends React.Component {
     year: {
       label: "year",
       min: 1920,
-      max: 2017,
+      max: 2020,
       step: 1,
-      value: { min: 2000, max: 2017 }
-    },
-    rating: {
-      label: "rating",
-      min: 0,
-      max: 10,
-      step: 1,
-      value: { min: 8, max: 10 }
-    },
-    runtime: {
-      label: "runtime",
-      min: 0,
-      max: 300,
-      step: 15,
-      value: { min: 60, max: 120 }
+      value: { min: 2000, max: 2020 }
     }
   };
 
