@@ -107,6 +107,17 @@ input{
   margin: 10px;
 }
 
+.about{
+  min-height: 80vh;
+  
+}
+
+.tmdb_logo{
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
 #footer{
   color: white;
 }

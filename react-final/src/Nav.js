@@ -15,9 +15,6 @@ function Nav(props) {
                   {/* <Menu {...props}> */}
                   <ul className="navbar-nav">
                     
-                    <Link to="/">
-                      <li className="nav-item nav-link">Home</li>
-                    </Link>
                     <Link to="/about">
                       <li className="nav-item nav-link">About</li>
                     </Link>
