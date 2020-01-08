@@ -6,7 +6,8 @@ import Nav from "./Nav";
 import "./styles.css";
 import Discover from "./Discover";
 import SearchResult from "./Search_result";
-import IndividualMovie from "./IndividualMovie";
+import Individual_movie from "./Individual_movie";
+// import IndividualMovie from "./IndividualMovie";
 import MyFavorites from "./MyFavorites";
 import MyRated from "./MyRated";
 import Footer from "./Footer";
@@ -21,7 +22,7 @@ function App(){
            <Route path="/about" component={About} />
            <Route path="/discover" component={Discover} />
            <Route path="/Search_result" component={SearchResult} />
-           <Route path="/movie/:id" component={IndividualMovie} />
+           <Route path="/movie/:id" component={Individual_movie} />
            <Route path="/my_favorites" component={MyFavorites} />
            <Route path="/my_rated" component={MyRated} />
          </Switch>

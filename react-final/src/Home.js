@@ -6,6 +6,9 @@ import Select from "react-select";
 import Axios from "axios";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Individual_movie from "./Individual_movie";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function Home() {
   const [items, setItems] = useState([]);
@@ -20,6 +23,10 @@ function Home() {
     const response = await Axios.get(url);
     const items = response.data;
     setItems(items.results);
+  }
+
+  function handleClick(){
+    
   }
 
   const url = `https://image.tmdb.org/t/p/w500/`;
@@ -41,7 +48,12 @@ function Home() {
                     <p>{item.release_date}</p>
                     <p> {item.vote_average}</p>
                     <p> {item.overview.substring(0, 120) + "..."}</p>
-                    <a href={`/movie/${item.id}`}>More Info</a>
+                    <a href={`/movie/${item.id}`}>
+                      More Info</a>
+                    {/* <a href={<Route path="/movie/${item.id}" 
+                     />}>More info </a> */}
+
+                     {/* <button onClick={handleClick}>More info</button> */}
                   </div>
               ))}
         </div>

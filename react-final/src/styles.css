@@ -87,6 +87,7 @@ input{
 
 .individual-movie{
   background-color: rgb(206, 197, 197);
+  min-height: 80vh;
 }
 
 .individual-movie img{

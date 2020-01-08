@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import { slide as Menu } from "react-bur
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Nav(props) {
   return (
@@ -23,9 +24,6 @@ function Nav(props) {
                     </Link>
                     <Link to="/search_result">
                       <li className="nav-item nav-link">Search Result</li>
-                    </Link>
-                    <Link to="/individual_movie">
-                      <li className="nav-item nav-link">Individual Movie</li>
                     </Link>
                     <Link to="/my_favorites">
                       <li className="nav-item nav-link">Favorites</li>
