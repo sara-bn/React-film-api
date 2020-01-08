@@ -48,12 +48,7 @@ function Home() {
                     <p>{item.release_date}</p>
                     <p> {item.vote_average}</p>
                     <p> {item.overview.substring(0, 120) + "..."}</p>
-                    <a href={`/movie/${item.id}`}>
-                      More Info</a>
-                    {/* <a href={<Route path="/movie/${item.id}" 
-                     />}>More info </a> */}
-
-                     {/* <button onClick={handleClick}>More info</button> */}
+                    <a href={`/movie/${item.id}`}>  More Info</a>
                   </div>
               ))}
         </div>

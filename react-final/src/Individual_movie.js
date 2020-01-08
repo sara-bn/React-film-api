@@ -27,8 +27,11 @@ export default class Individual_movie extends React.Component{
 
     LikeMovie(event){
       event.target.className ="fas fa-heart fa-2x";
-      console.log(this.state);
-      localStorage.setItem('id', this.state.item.id);
+      localStorage.setItem('title', this.state.item.title);
+      localStorage.setItem('poster', this.state.url + this.state.item.poster_path);
+      localStorage.setItem('release_date', this.state.item.release_date);
+      localStorage.setItem('vote_average', this.state.item.vote_average);
+      localStorage.setItem('overview', this.state.item.overview);
     }
   
     render() {

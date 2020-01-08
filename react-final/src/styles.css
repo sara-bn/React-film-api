@@ -119,6 +119,10 @@ input{
   margin: 0 auto;
 }
 
+.fav-container{
+  min-height: 80vh;
+}
+
 #footer{
   color: white;
 }
